@@ -8,12 +8,12 @@
     <script src="Angular/Controller/tableroController.js"></script>
 </head>
 <body ng-app="MetroUIAccess">
-    <section class="wrapper" ng-controller="MetroUIAccessCtrl">
+    <section class="wrapper" ng-controller="MetroUIAccessCtrl as self">
         <article class="flexContainer">
-            <article class="rowContainer" ng-repeat="i in [1,2,3,4]">
+            <article class="rowContainer" ng-repeat="cl in self.numeroColumnas()">
                 <div class="rowWidth">
-                    <div ng-repeat="cuadrado in cuadrados | filter:{Row:i}" ng-style="{ 'background-color':'cuadrado.Orden' }" ng-class="{ 'med pos': cuadrado.Tamano=='Medio', 'big pos': cuadrado.Tamano=='Grande', 'small pos cuatroSquare':cuadrado.Tamano=='Chico'}">
-                        Orden: {{cuadrado.Orden}}
+                    <div ng-repeat="cuadrado in self.colectorCubos()" ng-style="{ 'background-color':'cuadrado.Orden' }" ng-class="{ 'med pos': cuadrado.Tamano=='Medio', 'big pos': cuadrado.Tamano=='Grande', 'small pos cuatroSquare':cuadrado.Tamano=='Chico'}">
+                       
                     </div>
                 </div>
             </article>

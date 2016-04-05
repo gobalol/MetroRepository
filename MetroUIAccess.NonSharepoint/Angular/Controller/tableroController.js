@@ -1,12 +1,19 @@
-(function (app) {
-    'use strict';
-    app.controller('MetroUIAccessCtrl', function ($scope) {
+'use strict';
+angular
+    .module('MetroUIAccess')
+    .controller('MetroUIAccessCtrl', [colsYcubos]);
 
         //$scope.name = "Start With Project";
-
-        $scope.cubo = "";
-        $scope.arrayCubos = [];
-        $scope.cuadrados = [
+function colsYcubos() {
+    var self = this;
+    self.numeroColumnas = function () {
+        self.cols = [1, 2, 3];
+        return self.cols;
+    }
+    self.colectorCubos = function () {
+        self.cubo = "";
+        self.arrayCubos = [];
+        self.cuadrados = [
 
             {
                 Row: 1,
@@ -114,66 +121,46 @@
                 Tamano: "Medio"
             }
         ]
-        //var contadorCubos = 1;
-        for (var i = 0; i < $scope.cuadrados.length; i++) {
+        for (var i = 0; i < self.cuadrados.length; i++) {
             var indiceSiguiente = i + 1;
-            if ($scope.cuadrados[i].Tamano == "Chico") {
-                $scope.cubo = "<div class='square4x4containerOr3x1'>";
+            if (self.cuadrados[i].Tamano == "Grande") {
+                self.cubo = "<div class='big pos'></div>";
+                self.arrayCubos.push(self.cubo);
+                console.log("agrege big " + self.cubo);
+                self.cubo = [];
+            }
+            if (self.cuadrados[i].Tamano == "Medio") {
+                self.cubo = "<div class='med pos'></div>";
+                self.arrayCubos.push(self.cubo);
+                console.log("agrege med " + self.cubo);
+                self.cubo = [];
+            }
+            if (self.cuadrados[i].Tamano == "Chico") {
+                self.cubo = "<div class='square4x4containerOr3x1'>";
                 var cuboChicoContenido = "<div class='small pos cuatroSquare'></div>";
-              //  console.log("agrege chikito " + $scope.cubo + $scope.cuadrados[i].Orden);
+                console.log("agrege chikito " + self.cubo + cuboChicoContenido);
                 var cuboChicoCount = 1;
                 var exit = false;
                 do {
-                    if ($scope.cuadrados[indiceSiguiente].Tamano == "Chico") {
+                    if (self.cuadrados[indiceSiguiente].Tamano == "Chico") {
                         cuboChicoCount++;
-                        //cuboChicoContenido += "<div class='small pos cuatroSquare'></div>";
-                        $scope.cubo += cuboChicoContenido;
-                       // console.log("agrege chikito "+ $scope.cubo + $scope.cuadrados[indiceSiguiente].Orden);
+                        self.cubo += cuboChicoContenido;
+                        console.log("agrege chikito " + cuboChicoContenido + self.cuadrados[indiceSiguiente].Orden);
                         indiceSiguiente++;
                     } else {
                         exit = true;
                     }
-                } while ((cuboChicoCount < 4) && (indiceSiguiente < $scope.cuadrados.length) && (exit != true))
+                } while ((cuboChicoCount < 4) && (indiceSiguiente < self.cuadrados.length) && (exit != true))
                 {
-                    $scope.cubo += cuboChicoContenido;
-                    $scope.cubo += "</div>";
-                    $scope.arrayCubos.push($scope.cubo);
-                    i = indiceSiguiente-1;
-                    $scope.cubo.length = 0;
+                    self.cubo += cuboChicoContenido;
+                    self.cubo += "</div>";
+                    self.arrayCubos.push(self.cubo);
+                    i = indiceSiguiente - 1;
+                    self.cubo = [];
                 }
-                //if(($scope.cuadrados[i].Tamano == "Chico" )&&( $scope.cuadrados[i+1].Tamano == "Chico") && (contadorCubos <4 ))
-                //{
-                //    if(contadorCubos == 1)
-                //    {
-                //        $scope.cubo = "<div class='square4x4containerOr3x1'>";
-                //    }
-                //    $scope.cubo += "<div class='small pos cuatroSquare'></div>";
-                //    console.log("Cubo " + $scope.cubo);
-                //    contadorCubos++;
-                //}
-                //else if( (($scope.cuadrados[i].Tamano == "Chico") && ($scope.cuadrados[i+1].Tamano != "Chico") ) || ( contadorCubos >= 4) )
-                //{
-                //    if (contadorCubos == 1)
-                //    {
-                //        $scope.cubo = "<div class='square4x4containerOr3x1'>";
-                //        $scope.cubo += "<div class='small pos cuatroSquare'></div>";
-                //        $scope.cubo += "</div>";
-                //        console.log("Cerrado "+$scope.cubo);
-                //    } else
-                //    {
-                //    $scope.cubo += "<div class='small pos cuatroSquare'></div>";
-                //    console.log("Cubo " + $scope.cubo);
-                //    $scope.cubo += "</div>";
-                //    contadorCubos=1;
-                //    console.log("Cerrado "+$scope.cubo);
-                //    }
-                //}
-
             }
-            
         }
-        console.log($scope.arrayCubos);
-        //console.log($scope.arrayCubos);
-        //MetroServiceNonSP.getAllApplications();
-    });
-}(app));
+        console.log(self.arrayCubos);
+        return self.arrayCubos;
+    }
+}
