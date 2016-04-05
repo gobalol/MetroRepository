@@ -1,0 +1,59 @@
+body{
+	color:white;
+}
+.wrapper{
+	background-color:black;
+	margin:0;
+	padding:5px;
+	box-sizing:border-box;
+	width:100%;
+}
+.flexContainer{
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-around;
+	box-sizing:border-box;
+}
+.rowContainer{
+	width:23%;
+}
+.big{
+	background-color:#2d89ef;
+	flex:0 0 98%;
+	height:200px;
+	padding:1% 0;
+}
+.med{
+	background-color:#00aba9;
+	flex:0 0 48%;
+	height:200px;
+	padding:1% 0;
+}
+.small{
+	background-color:#7e3878;
+	flex:1 0 31.33%;
+	height:100px;
+}
+.rowWidth{
+	width:100%;
+	display:flex;
+	flex-flow:row wrap;
+	align-content:flex-start;
+	justify-content:flex-start;
+}
+/* esta es la caja de 4*/
+.square4x4containerOr3x1{
+	display:flex;
+	width:49%;
+	margin:0 auto;
+	flex-flow:row wrap;
+	align-items:center;
+}
+/* estos son los cuadrados de 4*/
+.small.cuatroSquare{
+	flex: 1 0 48%;
+    margin: 2% 1%;
+}
+.pos{
+	margin:1%;
+}

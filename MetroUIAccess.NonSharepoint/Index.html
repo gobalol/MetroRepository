@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="Stylesheet" type="text/css" href="../Content/MetroUICss/estilos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+    <script src="Angular/App/Core.js"></script>
+    <script src="Angular/Controller/tableroController.js"></script>
+</head>
+<body ng-app="MetroUIAccess">
+    <section class="wrapper" ng-controller="MetroUIAccessCtrl">
+        <article class="flexContainer">
+            <article class="rowContainer" ng-repeat="i in [1,2,3,4]">
+                <div class="rowWidth">
+                    <div ng-repeat="cuadrado in cuadrados | filter:{Row:i}" ng-style="{ 'background-color':'cuadrado.Orden' }" ng-class="{ 'med pos': cuadrado.Tamano=='Medio', 'big pos': cuadrado.Tamano=='Grande', 'small pos cuatroSquare':cuadrado.Tamano=='Chico'}">
+                        Orden: {{cuadrado.Orden}}
+                    </div>
+                </div>
+            </article>
+        </article>
+    </section>
+</body>
+</html>
