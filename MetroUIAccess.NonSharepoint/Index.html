@@ -12,10 +12,16 @@
         <article class="flexContainer">
             <article class="rowContainer" ng-repeat="i in [1,2,3,4]">
                 <div class="rowWidth">
-                    <div ng-repeat="cuadrado in cuadrados | filter:{Row:i}" ng-style="{ 'background-color':'cuadrado.Orden' }" ng-class="{ 'med pos': cuadrado.Tamano=='Medio', 'big pos': cuadrado.Tamano=='Grande', 'small pos cuatroSquare':cuadrado.Tamano=='Chico'}">
+                    <div ng-repeat="cuadrado in cuadrados | filter:{Row:i}" ng-if="cuadrado.Tamano =='Grande'" ng-style="{ 'background-color':'cuadrado.Orden' }" ng-class="{ 'big pos': cuadrado.Tamano=='Grande', 'small pos cuatroSquare':cuadrado.Tamano=='Chico'}">
                         Orden: {{cuadrado.Orden}}
                     </div>
-                </div>
+                    <div ng-repeat="cuadrado in cuadrados | filter:{Row:i}" ng-if="cuadrado.Tamano=='Medio'" ng-class="{ 'med pos': cuadrado.Tamano=='Medio' }">
+                        Orden: {{cuadrado.Orden}}
+                    </div>
+                    <div ng-repeat="cuadrado in cuadrados | filter:{Row:i}" ng-if="cuadrado.Tamano=='Chico'" ng-include src="'Angular/Template/cuboChicoTemplate.html'">
+                        Orden: {{cuadrado.Orden}}
+                    </div>
+                 </div>
             </article>
         </article>
     </section>

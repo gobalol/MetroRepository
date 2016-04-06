@@ -51,7 +51,7 @@ body{
 }
 /* estos son los cuadrados de 4*/
 .small.cuatroSquare{
-	flex: 1 0 48%;
+	flex: 0 0 47%;
     margin: 2% 1%;
 }
 .pos{

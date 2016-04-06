@@ -114,9 +114,14 @@
                 Tamano: "Medio"
             }
         ]
-        //var contadorCubos = 1;
         for (var i = 0; i < $scope.cuadrados.length; i++) {
             var indiceSiguiente = i + 1;
+            //if ($scope.cuadrados[i].Tamano == "Grande") {
+
+            //}
+            //if ($scope.cuadrados[i].Tamano == "Medio") {
+                
+            //}
             if ($scope.cuadrados[i].Tamano == "Chico") {
                 $scope.cubo = "<div class='square4x4containerOr3x1'>";
                 var cuboChicoContenido = "<div class='small pos cuatroSquare'></div>";
@@ -138,42 +143,13 @@
                     $scope.cubo += cuboChicoContenido;
                     $scope.cubo += "</div>";
                     $scope.arrayCubos.push($scope.cubo);
-                    i = indiceSiguiente-1;
-                    $scope.cubo.length = 0;
+                    i = indiceSiguiente - 1;
+                    $scope.cubo = [];
+                    //$scope.cubo.length = 0;
                 }
-                //if(($scope.cuadrados[i].Tamano == "Chico" )&&( $scope.cuadrados[i+1].Tamano == "Chico") && (contadorCubos <4 ))
-                //{
-                //    if(contadorCubos == 1)
-                //    {
-                //        $scope.cubo = "<div class='square4x4containerOr3x1'>";
-                //    }
-                //    $scope.cubo += "<div class='small pos cuatroSquare'></div>";
-                //    console.log("Cubo " + $scope.cubo);
-                //    contadorCubos++;
-                //}
-                //else if( (($scope.cuadrados[i].Tamano == "Chico") && ($scope.cuadrados[i+1].Tamano != "Chico") ) || ( contadorCubos >= 4) )
-                //{
-                //    if (contadorCubos == 1)
-                //    {
-                //        $scope.cubo = "<div class='square4x4containerOr3x1'>";
-                //        $scope.cubo += "<div class='small pos cuatroSquare'></div>";
-                //        $scope.cubo += "</div>";
-                //        console.log("Cerrado "+$scope.cubo);
-                //    } else
-                //    {
-                //    $scope.cubo += "<div class='small pos cuatroSquare'></div>";
-                //    console.log("Cubo " + $scope.cubo);
-                //    $scope.cubo += "</div>";
-                //    contadorCubos=1;
-                //    console.log("Cerrado "+$scope.cubo);
-                //    }
-                //}
-
             }
             
         }
         console.log($scope.arrayCubos);
-        //console.log($scope.arrayCubos);
-        //MetroServiceNonSP.getAllApplications();
     });
 }(app));
