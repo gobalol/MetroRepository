@@ -1,155 +1,198 @@
 (function (app) {
     'use strict';
+
     app.controller('MetroUIAccessCtrl', function ($scope) {
 
         //$scope.name = "Start With Project";
-
+        //$scope.TemplateG = function (){ return "GonzaPuto";}
+        $scope.row = [];
         $scope.cubo = "";
-        $scope.arrayCubos = [];
-        $scope.cuadrados = [
+        $scope.CubosLimpios = [];
+        $scope.Aplicaciones = [
 
             {
-                Row: 1,
+                Columna: 1,
                 Orden: 1,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Grande"
             },
             {
-                Row: 1,
+                Columna: 1,
                 Orden: 2,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Medio"
             },
             {
-                Row: 1,
+                Columna: 1,
                 Orden: 3,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Medio"
             },
             {
-                Row: 1,
+                Columna: 1,
                 Orden: 4,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 1,
+                Columna: 1,
                 Orden: 5,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 1,
+                Columna: 1,
                 Orden: 6,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 1,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Medio"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 2,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Medio"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 3,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 4,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 5,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 6,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 7,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 2,
+                Columna: 2,
                 Orden: 8,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Chico"
             },
             {
-                Row: 3,
+                Columna: 3,
                 Orden: 1,
                 Imagen: "#",
                 Url: "#",
                 Tamano: "Medio"
             }
         ]
-        for (var i = 0; i < $scope.cuadrados.length; i++) {
+        // $scope.colectorCubosChicos = function(){
+        for (var i = 0; i < $scope.Aplicaciones.length; i++) {
             var indiceSiguiente = i + 1;
-            //if ($scope.cuadrados[i].Tamano == "Grande") {
+            $scope.row = [];
+            if ($scope.Aplicaciones[i].Tamano == "Grande") {
+                $scope.row = [
+                                {
+                                    Columna: $scope.Aplicaciones[i].Columna,
+                                    Orden: $scope.Aplicaciones[i].Orden,
+                                    Imagen: $scope.Aplicaciones[i].Imagen,
+                                    Tamano: $scope.Aplicaciones[i].Tamano
+                                }
+                ]
+                $scope.CubosLimpios.push($scope.row);
+                $scope.row = [];
+            }
+            if ($scope.Aplicaciones[i].Tamano == "Medio") {
+                $scope.row.push({
+                    Columna: $scope.Aplicaciones[i].Columna,
+                    Orden: $scope.Aplicaciones[i].Orden,
+                    Imagen: $scope.Aplicaciones[i].Imagen,
+                    Tamano: $scope.Aplicaciones[i].Tamano
+                });
+                //$scope.CubosLimpios.push($scope.row);
+                //$scope.row = [];
+                if (indiceSiguiente < $scope.Aplicaciones.length) {
+                    if ($scope.Aplicaciones[indiceSiguiente].Tamano == "Medio") {
+                        $scope.row.push({
+                            Columna: $scope.Aplicaciones[indiceSiguiente].Columna,
+                            Orden: $scope.Aplicaciones[indiceSiguiente].Orden,
+                            Imagen: $scope.Aplicaciones[indiceSiguiente].Imagen,
+                            Tamano: $scope.Aplicaciones[indiceSiguiente].Tamano
+                        });
+                        i = indiceSiguiente;
+                    }
+                }
+                $scope.CubosLimpios.push($scope.row);
+                $scope.row = [];
+            }
 
-            //}
-            //if ($scope.cuadrados[i].Tamano == "Medio") {
-                
-            //}
-            if ($scope.cuadrados[i].Tamano == "Chico") {
-                $scope.cubo = "<div class='square4x4containerOr3x1'>";
-                var cuboChicoContenido = "<div class='small pos cuatroSquare'></div>";
-              //  console.log("agrege chikito " + $scope.cubo + $scope.cuadrados[i].Orden);
+            if ($scope.Aplicaciones[i].Tamano == "Chico") {
+                //$scope.cubo = "<div class='square4x4containerOr3x1'>";
+                //var cuboChicoContenido = "<div class='small pos cuatroSquare' ></div>";
+                //  console.log("agrege chikito " + $scope.cubo + $scope.cuadrados[i].Orden);
                 var cuboChicoCount = 1;
                 var exit = false;
                 do {
-                    if ($scope.cuadrados[indiceSiguiente].Tamano == "Chico") {
+                    if ($scope.Aplicaciones[indiceSiguiente].Tamano == "Chico") {
                         cuboChicoCount++;
+                        $scope.row.push({
+                            Columna: $scope.Aplicaciones[i].Columna,
+                            Orden: $scope.Aplicaciones[i].Orden,
+                            Imagen: $scope.Aplicaciones[i].Imagen,
+                            Tamano: $scope.Aplicaciones[i].Tamano
+                        });
                         //cuboChicoContenido += "<div class='small pos cuatroSquare'></div>";
-                        $scope.cubo += cuboChicoContenido;
-                       // console.log("agrege chikito "+ $scope.cubo + $scope.cuadrados[indiceSiguiente].Orden);
+                        //$scope.cubo += cuboChicoContenido;
+                        // console.log("agrege chikito "+ $scope.cubo + $scope.cuadrados[indiceSiguiente].Orden);
                         indiceSiguiente++;
                     } else {
                         exit = true;
                     }
-                } while ((cuboChicoCount < 4) && (indiceSiguiente < $scope.cuadrados.length) && (exit != true))
+                } while ((cuboChicoCount < 4) && (indiceSiguiente < $scope.Aplicaciones.length) && (exit !== true))
                 {
-                    $scope.cubo += cuboChicoContenido;
-                    $scope.cubo += "</div>";
-                    $scope.arrayCubos.push($scope.cubo);
+                    $scope.row.push({
+                        Columna: $scope.Aplicaciones[i].Columna,
+                        Orden: $scope.Aplicaciones[i].Orden,
+                        Imagen: $scope.Aplicaciones[i].Imagen,
+                        Tamano: $scope.Aplicaciones[i].Tamano
+                    });
+                    //$scope.cubo += "</div>";
+                    $scope.CubosLimpios.push($scope.row);
                     i = indiceSiguiente - 1;
-                    $scope.cubo = [];
-                    //$scope.cubo.length = 0;
+                    $scope.row = [];
                 }
             }
-            
         }
-        console.log($scope.arrayCubos);
+        console.log($scope.CubosLimpios);
     });
 }(app));
