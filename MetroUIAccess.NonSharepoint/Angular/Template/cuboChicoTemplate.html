@@ -1,3 +1,5 @@
-﻿<div class="small pos cuatroSquare">
-    Orden: {{cuadrado.Orden}}
-</div>
+﻿
+    <div ng-repeat="cubo in cuadrado" class="small pos cuatroSquare" ng-style="{'order':cubo.Orden, 'background-image':cubo.Imagen}">
+        Orden: {{cubo.Orden}}
+    </div>
+

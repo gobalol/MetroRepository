@@ -11,21 +11,24 @@
     
     <section class="wrapper" ng-controller="MetroUIAccessCtrl">
         <article class="flexContainer">
+            <!--<span>{{CubosLimpios}}</span>
+            <span>******************</span>
+            <span>{{CubosLimpios[1]}}</span>-->
             <article class="rowContainer" ng-repeat="i in [1,2,3,4]">
+                <!--<h3>New Column {{i}}</h3>-->
                 <div class="rowWidth">
-                    <div ng-repeat="cuadrado in CubosLimpios | filter:{Row:i}" ng-if="cuadrado.Tamano =='Grande'" ng-style="{ 'order':cuadrado.Orden }" ng-class="{ 'big pos': cuadrado.Tamano=='Grande', 'small pos cuatroSquare':cuadrado.Tamano=='Chico'}">
-                        Orden: {{cuadrado.Orden}}
+                    <div ng-repeat="cuadrado in CubosLimpios | filter:{Columna: i}" ng-if="cuadrado[0].Tamano=='Grande'" class="big pos">
+                        {{cuadrado.Orden}}
                     </div>
-                    <div ng-repeat="cuadrado in CubosLimpios | filter:{Row:i}" ng-if="cuadrado.Tamano=='Medio'" ng-style="{ 'order':cuadrado.Orden }" ng-class="{ 'med pos': cuadrado.Tamano=='Medio' }">
-                        Orden: {{cuadrado.Orden}}
+                    <div ng-repeat="cuadrado in CubosLimpios | filter:{Columna: i}" ng-if="cuadrado[0].Tamano=='Medio'" class="med pos">
+                        {{cuadrado.Orden}}
                     </div>
-                    <div ng-repeat="cuadrado in CubosLimpios | filter:{Row:i}" ng-if="cuadrado.Tamano=='Chico'" ng-style="{ 'order':cuadrado.Orden }" ng-class="{ 'square4x4containerOr3x1':cuadrado.Tamano=='Chico'}">
-                        <div class="small pos cuatroSquare">
-                            Orden: {{cuadrado.Orden}}
-                        </div>
+
+                    <div class="square4x4containerOr3x1" ng-repeat="cuadrado in CubosLimpios | filter:{Columna: i}" ng-if="cuadrado[0].Tamano=='Chico'" ng-include src="'/Angular/Template/cuboChicoTemplate.html'">
+                            
                     </div>
-                 </div>
-            </article>
+                    </div>
+        </article>
         </article>
     </section>
 </body>

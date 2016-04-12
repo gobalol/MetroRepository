@@ -7,6 +7,6 @@ c:\users\farm\documents\visual studio 2013\Projects\MetroUIAccess.NonSharepoint\
 C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\bin\MetroUIAccess.NonSharepoint.dll.config
 C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\bin\MetroUIAccess.NonSharepoint.dll
 C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\bin\MetroUIAccess.NonSharepoint.pdb
-C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\obj\Debug\MetroUIAccess.NonSharepoint.csprojResolveAssemblyReference.cache
 C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\obj\Debug\MetroUIAccess.NonSharepoint.dll
 C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\obj\Debug\MetroUIAccess.NonSharepoint.pdb
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess.NonSharepoint\obj\Debug\MetroUIAccess.NonSharepoint.csprojResolveAssemblyReference.cache

@@ -62,7 +62,10 @@
     <Content Include="Angular\App\Core.js" />
     <Content Include="Angular\Model\tableroModel.js" />
     <Content Include="Angular\Service\MetroServiceNonSP.js" />
+    <Content Include="Angular\tableroController.js" />
+    <Content Include="Angular\Template\cuboMedioTemplate.html" />
     <Content Include="Angular\Template\cuboChicoTemplate.html" />
+    <Content Include="Angular\Template\cuboGrandeTemplate.html" />
     <Content Include="Content\App.css" />
     <Content Include="Content\MetroUICss\estilos.css" />
     <Content Include="Index.html" />
