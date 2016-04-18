@@ -1,3 +1,6 @@
 c:\Users\gobal\OneDrive\Documentos\Visual Studio 2015\Projects\MetroUIAccess\MetroUIAccess\bin\Debug\MetroUIAccess.pdb
 c:\Users\gobal\OneDrive\Documentos\Visual Studio 2015\Projects\MetroUIAccess\MetroUIAccess\obj\Debug\MetroUIAccess.dll
 c:\Users\gobal\OneDrive\Documentos\Visual Studio 2015\Projects\MetroUIAccess\MetroUIAccess\obj\Debug\MetroUIAccess.pdb
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess\MetroUIAccess\bin\Debug\MetroUIAccess.pdb
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess\MetroUIAccess\obj\Debug\MetroUIAccess.dll
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess\MetroUIAccess\obj\Debug\MetroUIAccess.pdb

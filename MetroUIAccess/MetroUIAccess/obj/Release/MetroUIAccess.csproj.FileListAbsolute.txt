@@ -1,0 +1,3 @@
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess\MetroUIAccess\bin\Release\MetroUIAccess.pdb
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess\MetroUIAccess\obj\Release\MetroUIAccess.dll
+C:\Users\farm\Desktop\MetroRepository-master\MetroRepository-master\MetroUIAccess\MetroUIAccess\obj\Release\MetroUIAccess.pdb

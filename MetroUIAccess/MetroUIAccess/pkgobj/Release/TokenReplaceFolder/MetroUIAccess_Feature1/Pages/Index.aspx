@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv:"X-UA-Compatible" content="IE=8" />
     <title></title>
     <link href="../Content/MetroUICss/MetroStyles.css" rel="stylesheet" />
     <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
@@ -47,7 +46,7 @@
     <base target="_parent">
 </head>
 <body data-ng-app="MetroUIAccess">
-    <section id="wrapper" data-ng-controller="MetroUIAccessCtrl">
+    <section class="wrapper" data-ng-controller="MetroUIAccessCtrl">
         <article class="flexContainer">
             <article class="rowContainer" data-ng-repeat="i in [1,2,3,4]">
                 <div class="rowWidth">
@@ -67,45 +66,6 @@
             </article>
         </article>
     </section>
-    <script type="text/javascript">
-        (function(){
-        "use strict";
-            window.Communica = window.Communica || {};
 
-            $(document).ready(function () {
-                Communica.Part.init();
-            });
-
-            Communica.Part = {
-                senderId: '',
-                previousHeight: 0,
-                minHeight: 0,
-                firstResize: true,
-                init: function () {
-                    var params = document.URL.split("?")[1].split("&");
-                    for (var i = 0; i < params.length; i = i + 1) {
-                        var param = params[i].split("=");
-                        if (param[0].toLowerCase() == "senderid")
-                            this.senderId = decodeURIComponent(param[1]);
-                    }
-                    this.adjustSize();
-                },
-
-                adjustSize: function () {
-                    var step = 30,
-                        newHeight,
-                        contentHeight = $('#wrapper').height(),
-                        resizeMessage = '<message senderId={Sender_ID}>resize({Width}, {Height})</message>';
-                    console.log("soy contentheight " + contentHeight);
-                    newHeight = (step - (contentHeight % step)) + contentHeight;
-                    console.log("soy resize msj " + newHeight);
-                    resizeMessage = resizeMessage.replace("{Sender_ID}", this.senderId);
-                    resizeMessage = resizeMessage.replace("{Height}", newHeight);
-                    resizeMessage = resizeMessage.replace("{Width}", "100%");
-
-                    window.parent.postMessage(resizeMessage, "*");
-                }
-            }})();
-</script>
 </body>
 </html>

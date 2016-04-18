@@ -1,24 +1,16 @@
-﻿html {
-    height: 100%!important;
-}
-body{
+﻿body{
     overflow: auto!important;
-    width:100%!important;
-    height:100%!important;
 }
 /* ==== Container ==== */
-#wrapper{
+.wrapper{
 	margin:0;
 	padding:5px;
     position:relative;
 	box-sizing:border-box;
-	min-width:100%;
-    width:100%;
-    height:100%;
+	width:100%;
 }
 .flexContainer{
 	display:flex;
-    height: 100%;
 	-ms-flex-wrap:wrap;
 	-ms-flex-direction:row;
 	/*flex-flow:row wrap;*/
@@ -42,14 +34,12 @@ body{
 .rowContainer{
 	width:23%;
     position:relative;
-    height:100%;
 	display:flex;
     /*IE 10 para abajo*/
 	display: -ms-flexbox;
 }
 .rowWidth{
 	width:100%;
-    height:100%;
 	position:relative;
 	display:flex;
 	/* para IE 10 */
